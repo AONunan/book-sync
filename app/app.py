@@ -20,6 +20,7 @@ def hello_world():
             library.append({
                "author": author,
                "title": book,
+               "title_display": book.replace("_", ":"),
                "previously_synced": book in previously_synced_books
             })
    

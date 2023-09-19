@@ -10,8 +10,10 @@
 </head>
 
 <body>
+    <input type="text" id="search" placeholder="Search...">
 
-    <div class="flex-container">
+
+    <div id="book-container" class="flex-container">
         {% for book in library %}
 
         <div class="flex-item">
@@ -23,7 +25,7 @@
                 
                 <div class="desc">
                     <ul>
-                        <li class="movie-title">{{ book.title }}</li>
+                        <li class="movie-title">{{ book.title_display }}</li>
                         <li class="movie-platform">{{ book.author }}</li>
                     </ul>
                 </div>
