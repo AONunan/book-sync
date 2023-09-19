@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+venv/
+env/
+
+# Logs
+*.log
+
+# Local development files
+db.sqlite3
+*.sqlite
+
+# Compiled Python files
+*.pyc
+
+# macOS
+.DS_Store
+
+# IDE-specific files
+.idea/
+.vscode/

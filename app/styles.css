@@ -1,0 +1,109 @@
+body {
+  background-color: rgb(32, 32, 32)
+}
+
+h1,
+h2,
+h3,
+.desc {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+
+  list-style: none;
+}
+
+ul {
+  display: inline-block;
+  text-align: center;
+  padding: 0;
+
+}
+
+th,
+td {
+  font-size: 20px;
+}
+
+th.stats-title,
+td.stats-title {
+  color: white;
+  text-align: left;
+  padding-left: 10pc;
+}
+
+th.stats-count,
+td.stats-count {
+  color: white;
+  text-align: right;
+  padding-right: 10pc;
+}
+
+.desc {
+  padding-top: 10px;
+  text-align: center;
+  vertical-align: bottom;
+  width: 250px;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  word-wrap: break-word;
+  box-shadow: 0 0 5px #000000;
+  padding: 5px;
+  margin: 10px;
+  background-color: rgb(20, 20, 20);
+  border-radius: 15px;
+}
+
+.flex-item:has(input[type="checkbox"]:checked) {
+  background-color: green;
+  box-shadow: 0 0 50px green;
+}
+
+img {
+  /* border-radius: 10px; */
+  /* top border radius */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.img-container {
+  width: 250px;
+  height: 375px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+}
+
+.movie-title {
+  font-size: 20px;
+}
+
+.movie-platform {
+  color: rgb(194, 194, 194);
+  text-transform: capitalize;
+}
+
+.movie-date {
+  color: rgb(194, 194, 194);
+}
+
+input[type="checkbox"] {
+  display: none;
+}

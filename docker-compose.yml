@@ -1,0 +1,20 @@
+---
+services:
+  book_sync:
+      ports:
+          - '5000:5000'
+      volumes:
+          - '/path/to/calibre:/calibre'
+          - '.\db\:/db'
+      build:
+        context: .
+        dockerfile: Dockerfile1
+
+  file_server:
+      ports:
+          - '8000:8000'
+      volumes:
+          - '/path/to/calibre:/calibre'
+      build:
+        context: .
+        dockerfile: Dockerfile2

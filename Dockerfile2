@@ -1,0 +1,3 @@
+FROM python
+WORKDIR /calibre
+CMD ["python", "-m", "http.server"]
