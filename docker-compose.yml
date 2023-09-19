@@ -1,6 +1,6 @@
 ---
 services:
-  book_sync:
+  book_sync_web_app:
       ports:
           - '5000:5000'
       volumes:
@@ -10,7 +10,7 @@ services:
         context: .
         dockerfile: Dockerfile1
 
-  file_server:
+  book_sync_file_server:
       ports:
           - '8001:8000'
       volumes:
