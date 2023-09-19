@@ -59,5 +59,9 @@ def get_book_list():
 def server_css():
    return send_file("styles.css")
 
+@app.route('/script.js')
+def server_javascript():
+   return send_file("script.js")
+
 if __name__ == '__main__':
    app.run()

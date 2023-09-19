@@ -7,7 +7,7 @@ import urllib.parse
 from bs4 import BeautifulSoup
 
 
-destination_dir = "/data/data/com.termux/files/home/storage/shared/Audiobooks"
+destination_dir = "/data/data/com.termux/files/home/storage/shared/book-sync"
 
 response = requests.get("http://192.168.8.100:5000/get")
 

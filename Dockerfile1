@@ -3,5 +3,6 @@ WORKDIR /app
 RUN pip install Flask
 COPY ./app/templates /app/templates
 COPY ./app/styles.css /app/
+COPY ./app/script.js /app/
 COPY ./app/app.py /app/
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
