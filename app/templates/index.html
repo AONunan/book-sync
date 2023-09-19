@@ -20,7 +20,7 @@
         <div class="flex-item">
             <div>
                 <div class="img-container">
-                    <img src="http://192.168.8.101:8000/{{ author }}/{{ book }}/cover.jpg" alt="{{ book }}" width="250">
+                    <img src="http://192.168.8.100:8001/{{ author }}/{{ book }}/cover.jpg" alt="{{ book }}" width="250">
                     <input id="{{ author }}/{{ book }}" type="checkbox" {% if (author ~ '/' ~ book) in previously_synced_books %}checked{% endif %} >
                 </div>
                 

@@ -4,17 +4,17 @@ services:
       ports:
           - '5000:5000'
       volumes:
-          - '/path/to/calibre:/calibre'
-          - '.\db\:/db'
+          - '/mnt/media/Media/Calibre:/calibre'
+          - '/home/alan/config/book-sync-db:/db'
       build:
         context: .
         dockerfile: Dockerfile1
 
   file_server:
       ports:
-          - '8000:8000'
+          - '8001:8000'
       volumes:
-          - '/path/to/calibre:/calibre'
+          - '/mnt/media/Media/Calibre:/calibre'
       build:
         context: .
         dockerfile: Dockerfile2
