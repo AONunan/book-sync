@@ -25,25 +25,11 @@ td {
   font-size: 20px;
 }
 
-th.stats-title,
-td.stats-title {
-  color: white;
-  text-align: left;
-  padding-left: 10pc;
-}
-
-th.stats-count,
-td.stats-count {
-  color: white;
-  text-align: right;
-  padding-right: 10pc;
-}
-
 .desc {
   padding-top: 10px;
   text-align: center;
   vertical-align: bottom;
-  width: 250px;
+  /* width: 250px; */
 }
 
 .flex-container {
@@ -58,15 +44,22 @@ td.stats-count {
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between; /* Add this to distribute items evenly */
 }
 
 .flex-item {
+  width: 300px;
+  min-height: 400px;
+  /* height: 100%; Ensure the container takes up the full height */
   word-wrap: break-word;
   box-shadow: 0 0 5px #000000;
   padding: 5px;
   margin: 10px;
   background-color: rgb(20, 20, 20);
   border-radius: 15px;
+  flex-grow: 1; /* Allow items to grow and fill available space */
+  justify-content: space-between; /* Pushes .desc to the bottom */
+
 }
 
 .flex-item:has(input[type="checkbox"]:checked) {
@@ -79,20 +72,31 @@ img {
 }
 
 .img-container {
-  width: 250px;
-  height: 375px;
+  /* width: 250px; */
+  width: 100%;
+
+  /* height: 375px; */
+  height: auto;
+
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Horizontal center alignment */
+  align-items: center; /* Vertical center alignment */
+
 }
 
 .movie-title {
   font-size: 20px;
+  font-size:xx-large;
 }
 
 .movie-platform {
   color: rgb(194, 194, 194);
-  text-transform: capitalize;
+  font-size:x-large;
 }
 
 .movie-date {
@@ -105,10 +109,12 @@ input[type="checkbox"] {
 
 #search {
   width: 100%;
+  height:fit-content;
   padding: 10px;
   margin: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 25px;
+  font-size: xx-large;
   box-shadow: 0 0 25px #000000;
   transition: box-shadow 0.3s ease;
   position: sticky; /* Make the search bar sticky */
