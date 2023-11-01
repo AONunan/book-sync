@@ -1,20 +1,20 @@
----
 services:
-  book_sync_web_app:
-      ports:
-          - '5000:5000'
-      volumes:
-          - '/mnt/media/Media/Calibre:/calibre'
-          - '/home/alan/config/book-sync-db:/db'
-      build:
-        context: .
-        dockerfile: Dockerfile1
 
-  book_sync_file_server:
-      ports:
-          - '8001:8000'
-      volumes:
-          - '/mnt/media/Media/Calibre:/calibre'
-      build:
-        context: .
-        dockerfile: Dockerfile2
+  web_app:
+    ports:
+      - '5000:5000'
+    volumes:
+      - '/mnt/share04/calibre:/calibre'
+      - '/home/alan/docker-config/book-sync-db:/db'
+    build:
+      context: .
+      dockerfile: Dockerfile1
+
+  file_server:
+    ports:
+      - '8001:8000'
+    volumes:
+      - '/mnt/share04/calibre:/calibre'
+    build:
+      context: .
+      dockerfile: Dockerfile2
