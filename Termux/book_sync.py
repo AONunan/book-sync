@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 destination_dir = "/data/data/com.termux/files/home/storage/shared/book-sync"
 
-response = requests.get("http://192.168.8.100:5000/get")
+response = requests.get("https://book-sync.lan.alannoonan.com/get")
 
 if(response.status_code == 200):
     book_list = response.json()
@@ -29,7 +29,7 @@ for book in book_list:
     if not(os.path.isdir(f"{destination_dir}/{title}")):
         print(f"Syncing '{title}'... ")
 
-        base_url = f"http://192.168.8.100:8001/{urllib.parse.quote(book)}"
+        base_url = f"https://book-sync-files.lan.alannoonan.com/{urllib.parse.quote(book)}"
         print(f"Downloading from: {base_url}")
 
         # Send an HTTP GET request to the directory URL
