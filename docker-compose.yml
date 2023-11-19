@@ -9,6 +9,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile1
+    restart: 'unless-stopped'
 
   file_server:
     ports:
@@ -18,3 +19,4 @@ services:
     build:
       context: .
       dockerfile: Dockerfile2
+    restart: 'unless-stopped'
