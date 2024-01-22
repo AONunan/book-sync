@@ -1,22 +1,40 @@
+
+
+networks:
+  traefik:
+    external: true
+    
 services:
 
   web_app:
     ports:
       - '5000:5000'
     volumes:
-      - '/mnt/share04/calibre:/calibre'
-      - '/home/alan/docker-config/book-sync-db:/db'
+      - '/mnt/hdd06/calibre:/calibre:ro'
+      - './db:/db'
     build:
       context: .
       dockerfile: Dockerfile1
     restart: 'unless-stopped'
+    labels:
+      - traefik.http.routers.book_sync_web_app.rule=Host(`book-sync.lan.alannoonan.com`)
+      - traefik.http.routers.book_sync_web_app.tls=true
+      - traefik.http.routers.book_sync_web_app.tls.certresolver=le
+    networks:
+      - traefik
 
   file_server:
     ports:
       - '8001:8000'
     volumes:
-      - '/mnt/share04/calibre:/calibre'
+      - '/mnt/hdd06/calibre:/calibre:ro'
     build:
       context: .
       dockerfile: Dockerfile2
     restart: 'unless-stopped'
+    labels:
+      - traefik.http.routers.book_sync_file_server.rule=Host(`book-sync-files.lan.alannoonan.com`)
+      - traefik.http.routers.book_sync_file_server.tls=true
+      - traefik.http.routers.book_sync_file_server.tls.certresolver=le
+    networks:
+      - traefik
